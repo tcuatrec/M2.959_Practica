@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Sector Ramader de Catalunya: Un Viatge per la Diversitat Territorial i Productiva</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('portada.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        nav {
+            background: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 1em;
+            font-family: 'Arial', sans-serif;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #e74c3c;
+        }
+
+        section {
+            background: white;
+            margin: 40px auto;
+            padding: 60px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .intro-section {
+            background: linear-gradient(to right, #ecf0f1 0%, #ffffff 100%);
+            border-left: 5px solid #3498db;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-weight: 400;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 15px;
+        }
+
+        .question-number {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .narrative-text {
+            font-size: 1.15em;
+            margin-bottom: 30px;
+            text-align: justify;
+            color: #34495e;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fef9d7 0%, #fef9d7 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 85%;
+            padding: 0 5px;
+            font-weight: 500;
+        }
+
+        .viz-container {
+            margin: 40px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            display: block;
+        }
+
+        .insights {
+            background: #ecf0f1;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .insights h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .insights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .insights li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05em;
+        }
+
+        .insights li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .conclusion-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+        }
+
+        .conclusion-section h2 {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+
+        .conclusion-section .narrative-text {
+            color: rgba(255,255,255,0.95);
+        }
+
+        .key-findings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .finding-card {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .finding-card h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+
+        .context-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .context-box strong {
+            color: #856404;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            section {
+                padding: 40px 20px;
+                margin: 20px auto;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            iframe {
+                height: 500px;
+            }
+        }
+
+        .scroll-indicator {
+            text-align: center;
+            margin: 30px 0;
+            opacity: 0.6;
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>El sector ramader de Catalunya</h1>
+            <p class="subtitle">Un viatge per la diversitat territorial i productiva</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#intro">Introducció</a></li>
+            <li><a href="#capacitat">Capacitat</a></li>
+            <li><a href="#especies">Espècies</a></li>
+            <li><a href="#sistemes">Sistemes productius</a></li>
+            <li><a href="#sostenibilitat">Sostenibilitat</a></li>
+            <li><a href="#conclusions">Conclusions</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="intro" class="intro-section">
+            <h2>El context: Catalunya ramadera</h2>
+            <p class="narrative-text">
+                Catalunya és molt més que una terra de mar i muntanya. Darrere dels seus paisatges, 
+                s'amaga una xarxa complexa d'explotacions ramaderes que 
+                alimenten milions de persones i configuren l'economia rural del territori. Però, 
+                <strong>com es distribueix aquesta activitat?</strong> <strong>Quins territoris concentren 
+                més animals?</strong> I sobretot, <strong>hi ha patrons que ens ajudin a entendre el mosaic 
+                ramader català?</strong>
+            </p>
+            <p class="narrative-text">
+                Aquest viatge ens portarà a explorar quatre dimensions clau del sector ramader català, 
+                començant per la capacitat total dels municipis, seguint pels patrons de concentració 
+                per espècie, analitzant la relació entre espècie i sistema productiu i entre
+                sostenibilitat i sistema productiu, i finalitzant amb les diferències territorials en
+                sostenibilitat. Cada pas ens aproparà a una visió més completa i matisada d'aquest
+                sector vital.
+            </p>
+            <div class="context-box">
+                <strong>Sobre les dades</strong>
+                <p style="margin-top: 10px;">
+                    Aquesta anàlisi es basa en el <em>Registre d'Explotacions Ramaderes de Catalunya</em> 
+                    (descarregat el 19 de novembre de 2025), una base de dades oficial de la Generalitat de Catalunya 
+                    que conté informació detallada de 26.719 explotacions ramaderes distribuïdes pels 947 municipis catalans.
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>Característiques principals del conjunt de dades:</strong>
+                </p>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Nom del dataset:</strong> Registre d'explotacions ramaderes de Catalunya</li>
+                    <li><strong>URL:</strong> https://analisi.transparenciacatalunya.cat/d/7bpt-5azk</li>
+                    <li><strong>Darrera actualització:</strong> 5 de novembre de 2025</li>
+                    <li><strong>Data d'accés:</strong> 19 de novembre de 2025</li>
+                    <li><strong>Propietari del dataset:</strong> Generalitat de Catalunya. Departament d'Agricultura, Ramaderia, Pesca i Alimentació.</li>
+                    <li><strong>Tamany:</strong><br> Files: 26.719<br>Columnes: 53</li>
+                    <li><strong>Llicència:</strong> Llicència oberta d’ús d'informació - Catalunya</li>
+                    <li><strong>Variables clau:</strong> Municipi d'explotació, espècie ramadera, sistema productiu (Intensiu/Semiextensiu/Extensiu), criteri de sostenibilitat (Convencional/Integrat/Ecològic), i Total URM (Unitats Ramaderes Majors)</li>
+                </ul>
+                <p style="margin-top: 10px;">
+                    <strong>Preparació de les dades</strong>
+                </p>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Neteja de dades:</strong> Conversió de valors numèrics eliminant separadors de milers i gestionant valors nuls</li>
+                    <li><strong>Incorporació de dades geogràfiques:</strong> Incorporació del GeoJSON oficial de municipis de Catalunya (ICGC) per a la visualització geoespacial</li>
+                    <li><strong>Normalització de municipis:</strong> Creació d'un mapatge de 139 correspondències per harmonitzar noms de municipis entre el CSV i el GeoJSON oficial (p.ex., "Brunyola i Sant Martí Sapresa" → "Brunyola")</li>
+                    <li><strong>Agregació espacial:</strong> Agrupació de dades per municipi aplicant sumes de Total URM per obtenir la càrrega ramadera total de cada territori</li>
+                    <li><strong>Transformació logarítmica:</strong> Aplicació de log10(x+1) als valors d'URM per al mapa de capacitat, facilitant la visualització d'un rang de valors de 0 a 1.168.636 URM</li>
+                </ul>
+                <p style="margin-top: 10px;">
+                    Les visualitzacions utilitzen URM (Unitats Ramaderes Majors) com a mesura estandarditzada 
+                    que permet comparar la càrrega ramadera entre diferents espècies.
+                </p>
+            </div>
+        </section>
+
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="7 13 12 18 17 13"></polyline>
+                <polyline points="7 6 12 11 17 6"></polyline>
+            </svg>
+        </div>
+
+        <section id="capacitat">
+            <h2><span class="question-number">1</span>On es concentra la ramaderia catalana?</h2>
+            <p class="narrative-text">
+                Imaginem que poguéssim veure Catalunya des del cel, no amb els ulls habituals que distingeixen 
+                ciutats i carreteres, sinó amb una visió que ens mostri la intensitat ramadera de cada racó 
+                del territori. Quins municipis brillarien amb més força? 
+                Quins quedarien a l'ombra?
+            </p>
+            <p class="narrative-text">
+                El primer mapa que veurem respon exactament aquesta pregunta: <strong>on es concentra la major 
+                capacitat d'animals a Catalunya?</strong> Utilitzant una escala logarítmica que suavitza els 
+                valors extrems, el mapa transforma els números en colors: del blau (baixa concentració) passant 
+                pel groc i arribant al vermell (alta concentració).
+            </p>
+
+            <div class="viz-container">
+                <iframe src="mapa_capacitat_municipis.html" title="Mapa de Capacitat per Municipis"></iframe>
+            </div>
+
+            <div class="insights">
+                <h3>Patrons descoberts</h3>
+                <ul>
+                    <li><strong>Les Terres de Lleida dominen el panorama ramader:</strong> La província de Lleida 
+                        concentra els municipis amb major capacitat total d'animals, especialment a les comarques
+                        del Segrià i la Noguera.</li>
+                    <li><strong>Un eix ramader interior:</strong> Des d'Osona fins al Segrià, 
+                        s'observa un corredor d'alta intensitat ramadera que contrasta amb les zones costaneres.</li>
+                    <li><strong>La costa i les grans ciutats mostren valors baixos:</strong> El Barcelonès, 
+                        Maresme i zones costaneres presenten una presència ramadera residual, concentrant-se 
+                        la població humana en detriment del bestiar.</li>
+                    <li><strong>Els Pirineus, un cas particular:</strong> Malgrat la tradició ramadera de muntanya, 
+                        els municipis pirinencs no destaquen en capacitat total, possiblement per l'extensivitat 
+                        del sistema.</li>
+                </ul>
+            </div>
+
+            <p class="narrative-text" style="margin-top: 30px;">
+                Aquest mapa ens mostra només la punta de l'iceberg. Darrere d'aquests colors, s'amaguen històries 
+                diferents: municipis especialitzats en una sola espècie, altres amb diversitat ramadera, i 
+                territoris on conviuen sistemes productius molt diferents. Per entendre millor aquesta complexitat, 
+                necessitem apropar-nos més...
+            </p>
+        </section>
+
+        <section id="especies">
+            <h2><span class="question-number">2</span>El mosaic d'espècies: territoris especialitzats</h2>
+            <p class="narrative-text">
+                Si el mapa anterior ens mostrava <em>quant</em>, ara ens preguntem <em>què</em>. 
+                Cada municipi té la seva pròpia identitat ramadera, 
+                definida per l'espècie dominant que ocupa les seves explotacions. És com si cada territori 
+                tingués el seu propi "accent" ramader.
+            </p>
+            <p class="narrative-text">
+                El mapa que veurem a continuació revela <strong>patrons geogràfics importants</strong>: 
+                zones on domina el porcí, territoris de tradició bovina, àrees especialitzades en aviram... 
+                Cada color representa una espècie dominant, i junts dibuixen un mosaic territorial que 
+                reflecteix dècades d'especialització productiva, condicions climàtiques i tradicions locals.
+            </p>
+
+            <div class="context-box">
+                <strong>Interacció del mapa</strong><br>
+                Clica sobre qualsevol municipi per veure un gràfic detallat de la distribució d'espècies 
+                en aquell territori. Descobriràs que, fins i tot en municipis "especialitzats", sovint 
+                conviuen diverses espècies en proporcions diferents.
+            </div>
+
+            <div class="viz-container">
+                <iframe src="mapa_especies_municipis.html" title="Mapa d'Espècies Dominants per Municipis"></iframe>
+            </div>
+
+            <div class="insights">
+                <h3>Patrons d'especialització territorial</h3>
+                <ul>
+                    <li><strong>El domini del porcí a Lleida:</strong> Les zones d'alta capacitat ramadera 
+                        coincideixen amb una dominància clara del porcí, especialment a Segarra, Noguera i 
+                        Segrià. Catalunya és un dels principals productors porcins d'Europa.</li>
+                    <li><strong>El boví, a la muntanya:</strong> L'espècie bovina presenta una presència
+                        significativa als Pirineu i Prepirineus, zones tradicionalment vinculades a la
+                        ramaderia extensiva de muntanya.</li>
+                    <li><strong>L'oví, el més dispers:</strong> L'oví domina en municipis dispersos per tot
+                        el territori, tant al Pirineu (sobretot el de Lleida) com al Litoral i Prelitoral.</li>
+                    <li><strong>Espècies minoritàries però presents:</strong> Cabrum, equí i conills 
+                        configuren petites illes d'especialització en determinats municipis, mantenint viva 
+                        la diversitat ramadera catalana.</li>
+                </ul>
+            </div>
+
+            <p class="narrative-text" style="margin-top: 30px;">
+                Aquesta especialització territorial no és casual. Respon a una lògica econòmica, climàtica 
+                i de tradició. Però <strong>l'espècie dominant no és l'únic factor que defineix una explotació</strong>. 
+                El <em>com</em> es cria aquell animal és igualment important...
+            </p>
+        </section>
+
+        <section id="sistemes">
+            <h2><span class="question-number">3</span>Intensiu vs. Extensiu: La filosofia productiva</h2>
+            <p class="narrative-text">
+                No totes les granges són iguals. Darrere de cada espècie hi ha una manera de
+                fer, una filosofia productiva que determina com es crien els animals, quins
+                recursos necessiten i quin impacte tenen sobre el territori. Parlem dels 
+                <strong>sistemes productius</strong>.
+            </p>
+            <p class="narrative-text">
+                Els sistemes <em>intensius</em> es caracteritzen per una alta densitat d'animals en espais 
+                tancats, amb alimentació controlada i producció maximitzada. En canvi, els sistemes 
+                <em>extensius</em> es basen en l'aprofitament de pastures i espais oberts, amb menor 
+                densitat però major connexió amb el territori. Els <em>semiextensius</em> busquen un 
+                equilibri entre ambdós.
+            </p>
+            <p class="narrative-text">
+                El gràfic següent mostra una realitat contundent: <strong>cada espècie té una clara 
+                preferència per un tipus de sistema productiu</strong>, revelant estratègies productives 
+                molt diferents segons l'animal.
+            </p>
+
+            <div class="viz-container">
+                <iframe src="grafic_especies_sistema_productiu.html" title="Relació entre Espècie i Sistema Productiu"></iframe>
+            </div>
+
+            <div class="insights">
+                <h3>Filosofies de producció per espècie</h3>
+                <ul>
+                    <li><strong>El porcí: paradigma de la intensificació:</strong> Més del 90% de les 
+                        explotacions porcines utilitzen sistemes intensius, reflectint l'orientació 
+                        industrial d'aquest sector, amb economies d'escala i alta tecnificació.</li>
+                    <li><strong>L'aviram segueix el camí intensiu:</strong> Gallines i pollastres també 
+                        mostren una clara predominança del sistema intensiu, coherent amb les demandes 
+                        del mercat d'ou i carn aviar.</li>
+                    <li><strong>Oví i cabrum: l'alternativa extensiva:</strong> Aquestes espècies mantenen 
+                        una proporció significativa de sistemes extensius i semiextensius, aprofitant 
+                        pastures de muntanya i zones marginals.</li>
+                    <li><strong>El boví, diversitat productiva:</strong> Presenta una distribució més 
+                        equilibrada entre sistemes, possiblement degut a les diferències entre boví de llet 
+                        (més intensiu) i boví de carn (més extensiu).</li>
+                    <li><strong>L'èquid i altres espècies menors:</strong> Mantenen sistemes predominantment 
+                        extensius o semiextensius, sovint vinculats a funcions esportives, terapèutiques 
+                        o de conservació de races autòctones.</li>
+                </ul>
+            </div>
+
+            <p class="narrative-text" style="margin-top: 30px;">
+                Aquesta dualitat intensiu-extensiu no és neutra. Té implicacions profundes sobre la 
+                sostenibilitat, el benestar animal, l'impacte ambiental i la viabilitat econòmica. 
+                Però <strong>hi ha una geografia dels sistemes productius?</strong> Com es distribueixen 
+                territorialment aquestes filosofies de producció?
+            </p>
+
+            <h3 style="font-size: 1.5em; margin: 40px 0 20px; color: #2c3e50; font-weight: 400;">
+                Geografia dels sistemes productius: patrons territorials
+            </h3>
+
+            <p class="narrative-text">
+                Més enllà de saber quines espècies predominen en cada sistema productiu, ens podem preguntar: 
+                <strong>com es distribueixen territorialment aquests sistemes?</strong> Hi ha municipis 
+                més intensius que altres? Les zones de muntanya són més extensives?
+            </p>
+
+            <p class="narrative-text">
+                El mapa següent mostra el sistema productiu dominant en cada municipi basat en el 
+                nombre d'explotacions, revelant patrons geogràfics que reflecteixen les condicions 
+                del territori i les decisions dels ramaders.
+            </p>
+
+            <div class="context-box">
+                <strong>Interacció del mapa</strong><br>
+                Clica sobre qualsevol municipi per veure un gràfic detallat de la distribució de 
+                sistemes productius en aquell territori. Descobriràs que molts municipis combinen 
+                diferents sistemes segons les característiques de cada explotació.
+            </div>
+
+            <div class="viz-container">
+                <iframe src="mapa_sistemes_productius_municipis.html" title="Mapa de Sistemes Productius per Municipis"></iframe>
+            </div>
+
+            <div class="insights">
+                <h3>Patrons territorials dels sistemes productius</h3>
+                <ul>
+                    <li><strong>Predomini del sistema intensiu a les planes:</strong> Els municipis de 
+                        l'interior, especialment a Lleida i zones planes de Catalunya Central, mostren 
+                        una clara dominància del sistema intensiu, coherent amb la presència massiva 
+                        de porcí i aviram.</li>
+                    <li><strong>L'extensiu a la muntanya:</strong> Els municipis pirinencs i prepirinecs 
+                        tendeixen cap a sistemes extensius i semiextensius, aprofitant les pastures 
+                        naturals i la ramaderia tradicional de muntanya.</li>
+                    <li><strong>El semiextensiu com a pont:</strong> Algunes zones de transició entre 
+                        la muntanya i la plana mostren predomini del sistema semiextensiu, combinant 
+                        elements d'ambdós models.</li>
+                    <li><strong>Correlació amb la capacitat ramadera:</strong> Els municipis amb major 
+                        capacitat total d'animals coincideixen amb sistemes intensius, reflectint 
+                        l'eficiència espacial d'aquest model productiu.</li>
+                    <li><strong>Diversitat municipal:</strong> Clicant als municipis individuals, s'observa 
+                        que molts municipis combinen diversos sistemes productius, indicant convivència 
+                        de models diferents dins el mateix municipi.</li>
+                </ul>
+            </div>
+
+            <p class="narrative-text" style="margin-top: 30px;">
+                Aquesta distribució territorial dels sistemes productius no és casual. Reflecteix 
+                condicions orogràfiques, climàtiques i econòmiques que configuren el paisatge ramader 
+                català. Però <strong>hi ha una relació entre els sistemes productius i els criteris de sostenibilitat?</strong>
+            </p>
+
+            <h3 style="font-size: 1.5em; margin: 40px 0 20px; color: #2c3e50; font-weight: 400;">
+                Sostenibilitat i sistema productiu: connexions reveladores
+            </h3>
+
+            <p class="narrative-text">
+                Si cada espècie té la seva preferència productiva, cada criteri de 
+                sostenibilitat també mostra patrons clars en la seva relació amb els sistemes intensius, 
+                extensius o semiextensius. El següent gràfic revela connexions fascinants que qüestionen 
+                alguns tòpics sobre ramaderia sostenible.
+            </p>
+
+            <div class="context-box">
+                <strong>Criteris de sostenibilitat</strong><br>
+                <strong>Convencional:</strong> Sistema tradicional sense requisits ambientals específics més enllà de la normativa bàsica.<br>
+                <strong>Integrat:</strong> Incorpora pràctiques de gestió ambiental i minimització d'impactes.<br>
+                <strong>Ecològic:</strong> Segueix la normativa europea de producció ecològica (certificació oficial).
+            </div>
+
+            <div class="viz-container">
+                <iframe src="grafic_sostenibilitat_sistema_productiu.html" title="Relació entre Sostenibilitat i Sistema Productiu"></iframe>
+            </div>
+
+            <div class="insights">
+                <h3>Sostenibilitat i intensitat productiva</h3>
+                <ul>
+                    <li><strong>El convencional és predominantment intensiu:</strong> Un 72,8% de les 
+                        explotacions convencionals operen en sistemes intensius, reflectint el model 
+                        industrial predominant al sector.</li>
+                    <li><strong>L'ecològic abraça l'extensiu:</strong> Més de la meitat (51,8%) de les 
+                        explotacions ecològiques són extensives, coherent amb els requisits de benestar 
+                        animal i accés a pastures de la certificació ecològica.</li>
+                    <li><strong>El semiextensiu com a pont ecològic:</strong> Un terç de les explotacions 
+                        ecològiques utilitzen sistemes semiextensius, demostrant que la sostenibilitat 
+                        no exigeix necessàriament l'extensivitat total.</li>
+                    <li><strong>L'integrat: equilibri entre sistemes:</strong> Les poques explotacions 
+                        amb criteri integrat mostren una distribució més equilibrada, amb presència 
+                        significativa dels tres sistemes productius.</li>
+                    <li><strong>Sostenibilitat i intensiu no són incompatibles:</strong> Un 15,2% de les 
+                        explotacions ecològiques operen en sistemes intensius, demostrant que la producció 
+                        intensiva pot complir estàndards ambientals exigents.</li>
+                </ul>
+            </div>
+
+            <p class="narrative-text" style="margin-top: 30px;">
+                Aquestes dades ens mostren que <strong>la sostenibilitat no és una qüestió binària</strong>, 
+                sinó un espectre on diversos models productius poden aspirar a criteris ambientals 
+                exigents. I això ens porta a la darrera gran pregunta d'aquest viatge: com es distribueix 
+                territorialment aquesta sostenibilitat?
+            </p>
+        </section>
+
+        <section id="sostenibilitat">
+            <h2><span class="question-number">4</span>Geografia de la sostenibilitat: patrons territorials</h2>
+            <p class="narrative-text">
+                En un món cada cop més conscient de l'impacte ambiental de la producció alimentària, 
+                els criteris de sostenibilitat esdevenen una variable crítica. 
+                Catalunya, com a territori avançat en regulació ambiental, classifica les explotacions 
+                segons el seu criteri: <em>convencional</em>, <em>integrat</em> o <em>ecològic</em>.
+            </p>
+            <p class="narrative-text">
+                Però aquestes etiquetes no es distribueixen uniformement pel territori. 
+                <strong>Hi ha una geografia de la sostenibilitat?</strong> Certs municipis aposten més 
+                per la producció ecològica? Les zones d'alta intensitat ramadera són menys sostenibles?
+            </p>
+            <p class="narrative-text">
+                El mapa final del nostre viatge ens mostra precisament aquesta dimensió territorial 
+                de la sostenibilitat, revelant patrons que relacionen geografia, tradició i compromís 
+                ambiental.
+            </p>
+
+            <div class="viz-container">
+                <iframe src="mapa_sostenibilitat_municipis.html" title="Mapa de Sostenibilitat per Municipis"></iframe>
+            </div>
+
+            <div class="insights">
+                <h3>Patrons territorials de sostenibilitat</h3>
+                <ul>
+                    <li><strong>Predomini del sistema convencional:</strong> La majoria de municipis catalans 
+                        presenten el sistema convencional com a criteri dominant, reflectint la realitat 
+                        majoritària del sector.</li>
+                    <li><strong>Illes ecològiques en zones de muntanya:</strong> Els municipis amb major 
+                        percentatge d'explotacions ecològiques tendeixen a concentrar-se en zones de muntanya 
+                        i rurals, on la ramaderia extensiva facilita la transició.</li>
+                    <li><strong>Diversitat municipal:</strong> Clicant als municipis individuals, s'observa que 
+                        molts municipis combinen almenys dos criteris, indicant convivència de models productius 
+                        diferents.</li>
+                </ul>
+            </div>
+
+            <p class="narrative-text" style="margin-top: 30px;">
+                Aquest darrer mapa tanca el cercle del nostre viatge. Hem vist que la ramaderia catalana és
+                un mosaic complex, on la capacitat, l'espècie, el sistema productiu i la sostenibilitat
+                s'entrellacen per crear un paisatge divers i matisat.
+            </p>
+        </section>
+
+        <section id="conclusions" class="conclusion-section">
+            <h2>Síntesi: El retrat complex de la ramaderia catalana</h2>
+            <p class="narrative-text">
+                Aquest viatge per la geografia ramadera de Catalunya ens ha revelat un sector 
+                molt més complex del que sembla a primera vista. 
+                Cinc grans conclusions emergeixen d'aquesta exploració:
+            </p>
+
+            <div class="key-findings">
+                <div class="finding-card">
+                    <h4>Concentració territorial</h4>
+                    <p>La ramaderia catalana és profundament desigual territorialment. Lleida concentra 
+                    la major part de la capacitat ramadera, mentre la costa i les zones metropolitanes 
+                    presenten valors residuals.</p>
+                </div>
+
+                <div class="finding-card">
+                    <h4>Especialització per espècie</h4>
+                    <p>Cada territori té la seva "signatura ramadera". El porcí domina l'interior, 
+                    el boví es refugia a la muntanya, i espècies minoritàries mantenen petites illes 
+                    d'especialització. Aquesta diversitat és un patrimoni a preservar.</p>
+                </div>
+
+                <div class="finding-card">
+                    <h4>Dualitat productiva</h4>
+                    <p>Conviuen dos models: l'intensiu (porcí, aviram) orientat a l'eficiència 
+                    industrial, i l'extensiu/semiextensiu (oví, cabrum, boví) vinculat al 
+                    territori. Cada un té els seus avantatges i reptes.</p>
+                </div>
+
+                <div class="finding-card">
+                    <h4>Geografia productiva</h4>
+                    <p>Els sistemes intensius dominen les planes i zones productives de l'interior, 
+                    mentre l'extensiu i el semiextensiu predominen a la muntanya. Aquesta distribució 
+                    territorial reflecteix l'adaptació de cada model al territori.</p>
+                </div>
+
+                <div class="finding-card">
+                    <h4>Sostenibilitat emergent</h4>
+                    <p>El sistema convencional és dominant, però emergeixen illes ecològiques en zones 
+                    de muntanya. El repte és portar la sostenibilitat a les zones d'alta intensitat 
+                    ramadera, on més impacte pot tenir.</p>
+                </div>
+            </div>
+
+            <p class="narrative-text" style="margin-top: 40px;">
+                <strong>El futur del sector ramader català</strong> passa per trobar l'equilibri entre 
+                productivitat, sostenibilitat i viabilitat econòmica. Les dades ens mostren que aquest 
+                equilibri variarà segons el territori i l'espècie, i que no hi ha una solució única. 
+                La diversitat que hem descobert en aquest viatge és, alhora, un repte de gestió i 
+                una riquesa a preservar.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>Fonts de dades:</strong> <a href="https://agricultura.gencat.cat/ca/serveis/registres-oficials/ramaderia-sanitat-animal/registre-explotacions-ramaderes/" target="_blank" style="color: #3498db; text-decoration: none;">Registre d'explotacions ramaderes de Catalunya</a> (2025) | <a href="https://www.icgc.cat/ca/Geoinformacio-i-mapes/Dades-i-productes/Geoinformacio-cartografica/Divisions-administratives/" target="_blank" style="color: #3498db; text-decoration: none;">Divisions administratives de Catalunya</a> (ICGC)</p>
+        <p><strong>Visualitzacions:</strong> <a href="https://python-visualization.github.io/folium/latest/" target="_blank" style="color: #3498db; text-decoration: none;">Folium</a> (mapes interactius) | <a href="https://plotly.com/" target="_blank" style="color: #3498db; text-decoration: none;">Plotly</a> (gràfics interactius)</p>
+        <p><strong>Anàlisi:</strong> Pràctica de Visualització de Dades | Màster en Ciència de Dades de la UOC</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Highlight active section in navigation
+        window.addEventListener('scroll', function() {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.style.color = '#2c3e50';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = '#e74c3c';
+                    link.style.fontWeight = 'bold';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
